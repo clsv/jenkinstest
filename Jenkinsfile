@@ -1,9 +1,20 @@
 pipeline {
-    agent { docker { image 'bash:latest' } }
+    agent none
     stages {
-        stage('build') {
+        stage('Back-end') {
+            agent {
+                docker { image 'bash:latest' }
+            }
             steps {
-                sh 'ls -la'
+                sh 'mvn --version'
+            }
+        }
+        stage('Front-end') {
+            agent {
+                docker { image 'ubuntu:latest' }
+            }
+            steps {
+                sh 'lsb_release -a'
             }
         }
     }
