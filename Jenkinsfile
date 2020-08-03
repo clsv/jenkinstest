@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh 'export'
-                sh 'env'
-                sh 'date'
+                environment { 
+                    TEST_ENV = 'THIS IS TEST VAR'
+                }
+                sh 'printenv'
                 timeout(time: 1, unit: 'MINUTES') {
                     retry(5) {
                         sh 'date'
