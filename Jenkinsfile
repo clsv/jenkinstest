@@ -2,10 +2,11 @@ pipeline {
     agent none
     stages {
         stage('test') {
+            environment { 
+                TEST_ENV = 'THIS IS TEST VAR'
+            }
             steps {
-                environment { 
-                    TEST_ENV = 'THIS IS TEST VAR'
-                }
+
                 sh 'printenv'
                 timeout(time: 1, unit: 'MINUTES') {
                     retry(5) {
