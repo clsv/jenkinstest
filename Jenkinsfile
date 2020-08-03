@@ -6,10 +6,10 @@ pipeline {
                 sh 'export'
                 sh 'env'
                 sh 'date'
-            }
-            timeout(time: 1, unit: 'MINUTES') {
-                retry(5) {
-                    sh 'date'
+                timeout(time: 1, unit: 'MINUTES') {
+                    retry(5) {
+                        sh 'date'
+                    }
                 }
             }
         }
