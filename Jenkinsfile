@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'bash:latest' }
             }
             steps {
-                sh 'mvn --version'
+                sh 'ls -la'
             }
         }
         stage('Front-end') {
