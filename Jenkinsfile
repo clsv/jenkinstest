@@ -2,6 +2,7 @@ pipeline {
     agent none
     stages {
         stage('test') {
+            agent none
             environment { 
                 TEST_ENV = 'THIS IS TEST VAR'
             }
