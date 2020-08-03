@@ -7,11 +7,11 @@ pipeline {
             }
             steps {
                 sh 'printenv'
-                timeout(time: 1, unit: 'MINUTES') {
-                    retry(5) {
-                        sh 'date'
-                    }
-                }
+                // timeout(time: 1, unit: 'MINUTES') {
+                //     retry(5) {
+                //         sh 'date'
+                //     }
+                // }
             }
         }
         stage('Back-end') {
